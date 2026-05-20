@@ -780,7 +780,7 @@
         <ul class="list-inline">
           <li class="list-inline-item">
             <i class="fa-li fa"></i>
-            Node.js, Express.js, Hapi.js, React.js, Angular, Ajax, DWR, Axios, JQuery, JQuery Mobile, jqGrid, RequireJS, Dojo, Less, Underscore, Handlebars, Express.js, Sails.js, Sencha Ext JS, Hilitor, Flot, Karma, PhantomJS, aws-sdk, Bookshelf, Knex.js, sequelize, The Serverless Framework, Objection.js, Moment.js, Jasmine, Mocha, Chai</li>
+            Node.js, Express.js, Hapi.js, React.js, Angular, Ajax, DWR, Axios, JQuery, JQuery Mobile, jqGrid, RequireJS, Dojo, Less, Underscore, Handlebars, Express.js, Sails.js, Sencha Ext JS, Hilitor, Flot, Karma, PhantomJS, aws-sdk, Bookshelf, Knex.js, sequelize, The Serverless Framework, Objection.js, Moment.js, Jasmine, Mocha, Chai, Vitest, Testcontainers</li>
           
         </ul>
 
@@ -788,7 +788,7 @@
         <ul class="list-inline">
           <li class="list-inline-item">
             <i class="fa-li fa"></i>
-            bitcoind, bitcoin-cli, BTCPay Server, lnbits, bcoin, Solidity, ERC20, ERC721, ERC165, ERC1155, Truffle, web3.js, web3j, Ganache, MetaMask, OpenZeppelin, Infura
+            Pay.sh HTTP 402 / MPP (Micropayment Protocol), bitcoind, bitcoin-cli, BTCPay Server, lnbits, bcoin, Solidity, ERC20, ERC721, ERC165, ERC1155, Truffle, web3.js, web3j, Ganache, MetaMask, OpenZeppelin, Infura
           </li>
           
         </ul>
@@ -797,7 +797,7 @@
         <ul class="list-inline">
           <li class="list-inline-item">
             <i class="fa-li fa"></i>
-            Retrieval-Augmented Generation (RAG), Model Context Protocol (MCP), MCP Inspector, Hugging Face, Ollama, OpenClaw, n8n, Spec Kit, OpenSpec, GitHub Copilot, Cursor, Claude Code, Qwen Code, Junie, OpenAI, Mistral, Open WebUI, SearXNG
+            Retrieval-Augmented Generation (RAG), Model Context Protocol (MCP), MCP Inspector, Hugging Face, Ollama, OpenClaw, n8n, Spec Kit, OpenSpec, GitHub Copilot, Cursor, Claude Code, Qwen Code, Junie, OpenAI, Mistral, Open WebUI, SearXNG, DeepSeek, PR-Agent
           </li>
           
         </ul>
@@ -828,7 +828,7 @@
         <ul class="list-inline">
           <li class="list-inline-item">
             <i class="fa-li fa"></i>
-            Cursor, Claude, IntelliJ, Eclipse, Spring Tool Suite (STS), Groovy & Grails Tools Suite (GGTS), NetBeans, JBuilder, JDeveloper, GoLand, Liquibase, Toad, MySQL Workbench, Sequel Pro, SQL Developer, pgAdmin, Cruise Control, Hudson/Jenkins, CircleCI, HermesJMS, Marathon IDE, TextMate, Sublime, Atom, Rational Rose, Together, UMLGraph, GitHub, Confluence, Bamboo, Jira, Crucible, HipChat, Trello, Cloudbees, Visual VM Profiler, JMeter, Vmware Fusion, Git flow, RStudio, Remix Ethereum IDE</li>
+            Cursor, Claude, IntelliJ, Eclipse, Spring Tool Suite (STS), Groovy & Grails Tools Suite (GGTS), NetBeans, JBuilder, JDeveloper, GoLand, Liquibase, Toad, MySQL Workbench, Sequel Pro, SQL Developer, pgAdmin, Cruise Control, Hudson/Jenkins, CircleCI, GitHub Actions, HermesJMS, Marathon IDE, TextMate, Sublime, Atom, Rational Rose, Together, UMLGraph, GitHub, Confluence, Bamboo, Jira, Crucible, HipChat, Trello, Cloudbees, Visual VM Profiler, JMeter, Vmware Fusion, Git flow, RStudio, Remix Ethereum IDE</li>
           
         </ul>
 
@@ -872,6 +872,14 @@
             <div>Project Description: Backend system demonstrating a production-style Retrieval-Augmented Generation (RAG) pipeline. Implements document ingestion, semantic chunking, vector embeddings using pgvector, similarity search, and LLM-based analysis. Includes cost governance, correlation tracing, and prompt governance architecture. </div>
           </div>
         </div>  
+
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+            <h3 class="mb-0">pay.sh HTTP 402 Payment Gateway POC (Node.js / Solana / Testcontainers)</h3>
+            <div class="subheading mb-3"><a href="https://github.com/walshe/pay-sh-agent-poc">https://github.com/walshe/pay-sh-agent-poc</a></div>
+            <div>Project Description: Proof-of-concept demonstrating USDC micropayments on Solana using the pay.sh gateway and the MPP (Micropayment Protocol) HTTP 402 standard. A TypeScript/Express upstream API is fronted by a pay.sh gateway that enforces per-request payment without any changes to the upstream code. Includes a full Testcontainers-based e2e test suite (Vitest) that builds both Docker images from source and verifies the complete payment flow — unauthenticated 402 challenge, MPP payment token decoding, and successful paid response — running locally and on GitHub Actions CI.</div>
+          </div>
+        </div>
 
         <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
           <div class="resume-content">
