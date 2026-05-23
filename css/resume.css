@@ -65,6 +65,7 @@ p.lead {
   font-size: 1.5rem;
   line-height: 3.5rem;
   margin-right: 1rem;
+  border: 2px solid rgba(247, 147, 26, 0.35);
 }
 
 .social-icons a:last-child {
@@ -87,6 +88,11 @@ p.lead {
   font-weight: 800;
   letter-spacing: 0.05rem;
   text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+#sideNav .navbar-nav .nav-item .nav-link:hover {
+  color: #F7931A;
 }
 
 #sideNav .navbar-toggler:focus {
