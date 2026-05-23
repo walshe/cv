@@ -1,8 +1,13 @@
+html {
+  overflow-x: hidden;
+}
+
 body {
   font-family: 'Muli', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   padding-top: 54px;
   color: #b0b0b0;
   background-color: #1a1a1a;
+  overflow-x: hidden;
 }
 
 @media (min-width: 992px) {
@@ -189,4 +194,27 @@ a:hover, a:focus, a:active {
 /* Full Night Mode — section dividers */
 section.resume-section {
   border-bottom: 1px solid #2a2a2a;
+}
+
+/* ── Mobile fixes ─────────────────────────────────────────── */
+@media (max-width: 575px) {
+  h1 {
+    font-size: 3rem;
+    line-height: 2.75rem;
+  }
+
+  h2 {
+    font-size: 2.25rem;
+  }
+
+  .subheading {
+    font-size: 1.1rem;
+  }
+
+  /* Keep resume dates below the job title, not inline */
+  section.resume-section .resume-item .resume-date {
+    min-width: 0;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
 }
