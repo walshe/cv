@@ -902,7 +902,28 @@
             <div class="subheading mb-3"><a href="https://github.com/walshe/monty">https://github.com/walshe/monty</a></div>
             <img src="./img/monty/monty.png" class="img-fluid" alt="Monty chat assistant screenshot"><br/><br/>
             <img src="./img/monty/monty2.png" class="img-fluid" alt="Monty chat assistant screenshot"><br/><br/>
-            <img src="./img/monty/monty3.png" class="img-fluid" alt="Monty chat assistant screenshot"><br/><br/>
+            <p style="margin-bottom:0.25rem;font-size:0.85rem;color:#6c757d;"><strong>LangGraph orchestration pipeline</strong> — each question flows through a guardrail node, a router, parallel signal/sentiment branches, and a compose node that synthesises the final answer.</p>
+            <div class="mermaid" style="max-width:100%;overflow-x:auto;margin:1rem 0;">
+%%{init: {"theme": "default", "themeVariables": {"primaryColor": "#dbeafe", "primaryTextColor": "#1e3a5f", "primaryBorderColor": "#3b82f6", "lineColor": "#64748b", "edgeLabelBackground": "#f8fafc", "fontFamily": "system-ui, sans-serif"} }}%%
+flowchart LR
+    Q["question"] --> G["guardrail\nscreens for prompt-injection"]
+    G -->|"blocked"| X(["refusal"])
+    G -->|"else"| R["route\ndecides what this\nquestion needs"]
+    R -.->|"Choice question\nTypeSafe Jev"| TS(("TypeSafe"))
+    R -->|"needsSearch\n+ allow_search=true"| S["search\nX / social sentiment"]
+    R -->|"needsSearch\n+ allow_search=false"| SK(["search skipped"])
+    R -->|"needsColumbo"| C["columbo\ntrading signals"]
+    S -.->|"Grok via OpenRouter"| OR2(("OpenRouter"))
+    S --> SENT["sentiment\nX chatter summarized"]
+    SENT --> CO["compose\nwrites the final answer"]
+    SK --> CO
+    C -.->|"GET /api/v1/signals"| COL(("Columbo"))
+    C -.->|"DeepSeek via OpenRouter"| OR3(("OpenRouter"))
+    C --> CS["columboSummary + trend"]
+    CS --> CO
+    CO -.->|"DeepSeek via OpenRouter"| OR4(("OpenRouter"))
+    CO --> A["answer + followUps"]
+            </div>
             <div>
               ChatGPT-style web app that delivers crypto/trading signals. 
               A LangGraph.js pipeline running in a Supabase Edge Function orchestrates real-time X sentiment search (Grok via OpenRouter), a Java trading-signals microservice, and multi-model LLM synthesis (AWS Bedrock + OpenRouter). 
@@ -1428,6 +1449,12 @@
 
   <!-- Custom scripts for this template -->
   <script src="js/resume.js"></script>
+
+  <!-- Mermaid diagrams -->
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true });
+  </script>
 
 </body>
 
