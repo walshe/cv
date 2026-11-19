@@ -913,16 +913,16 @@ flowchart LR
     R -->|"needsSearch\n+ allow_search=true"| S["search\nX / social sentiment"]
     R -->|"needsSearch\n+ allow_search=false"| SK(["search skipped"])
     R -->|"needsColumbo"| C["columbo\ntrading signals"]
-    S -.->|"Grok via OpenRouter"| OR2(("OpenRouter"))
     S --> SENT["sentiment\nX chatter summarized"]
+    S -.->|"Grok via OpenRouter"| OR2(("OpenRouter"))
     SENT --> CO["compose\nwrites the final answer"]
     SK --> CO
+    C --> CS["columboSummary + trend"]
     C -.->|"GET /api/v1/signals"| COL(("Columbo"))
     C -.->|"DeepSeek via OpenRouter"| OR3(("OpenRouter"))
-    C --> CS["columboSummary + trend"]
     CS --> CO
-    CO -.->|"DeepSeek via OpenRouter"| OR4(("OpenRouter"))
     CO --> A["answer + followUps"]
+    CO -.->|"DeepSeek via OpenRouter"| OR4(("OpenRouter"))
             </div>
             <div>
               ChatGPT-style AI-powered chat application that delivers crypto/trading signals. 
